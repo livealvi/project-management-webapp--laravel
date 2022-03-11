@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+//Controllers
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\NavbarController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,7 +15,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//navbar
+Route::get('/home', [NavbarController::class, 'home'])->name('home');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//login
+Route::get('/login', [LoginController::class, 'login'])->name('login');
+Route::post('/login', [LoginController::class, 'loginValidator'])->name('loginValidator');
