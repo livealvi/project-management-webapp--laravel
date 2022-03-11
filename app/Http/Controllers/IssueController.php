@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreIssuesRequest;
-use App\Http\Requests\UpdateIssuesRequest;
-use App\Models\Issues;
+use App\Http\Requests\StoreIssueRequest;
+use App\Http\Requests\UpdateIssueRequest;
+use App\Models\Issue;
 
-class IssuesController extends Controller
+class IssueController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +31,10 @@ class IssuesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreIssuesRequest  $request
+     * @param  \App\Http\Requests\StoreIssueRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreIssuesRequest $request)
+    public function store(StoreIssueRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class IssuesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Issues  $issues
+     * @param  \App\Models\Issue  $issue
      * @return \Illuminate\Http\Response
      */
-    public function show(Issues $issues)
+    public function show(Issue $issue)
     {
         //
     }
@@ -53,10 +53,10 @@ class IssuesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Issues  $issues
+     * @param  \App\Models\Issue  $issue
      * @return \Illuminate\Http\Response
      */
-    public function edit(Issues $issues)
+    public function edit(Issue $issue)
     {
         //
     }
@@ -64,11 +64,11 @@ class IssuesController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateIssuesRequest  $request
-     * @param  \App\Models\Issues  $issues
+     * @param  \App\Http\Requests\UpdateIssueRequest  $request
+     * @param  \App\Models\Issue  $issue
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateIssuesRequest $request, Issues $issues)
+    public function update(UpdateIssueRequest $request, Issue $issue)
     {
         //
     }
@@ -76,10 +76,10 @@ class IssuesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Issues  $issues
+     * @param  \App\Models\Issue  $issue
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Issues $issues)
+    public function destroy(Issue $issue)
     {
         //
     }

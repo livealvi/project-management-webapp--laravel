@@ -2,11 +2,11 @@
 
 namespace App\Policies;
 
-use App\Models\Issues;
+use App\Models\Project;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class IssuesPolicy
+class ProjectPolicy
 {
     use HandlesAuthorization;
 
@@ -25,10 +25,10 @@ class IssuesPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Issues  $issues
+     * @param  \App\Models\Project  $project
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, Issues $issues)
+    public function view(User $user, Project $project)
     {
         //
     }
@@ -48,10 +48,10 @@ class IssuesPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Issues  $issues
+     * @param  \App\Models\Project  $project
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, Issues $issues)
+    public function update(User $user, Project $project)
     {
         //
     }
@@ -60,10 +60,10 @@ class IssuesPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Issues  $issues
+     * @param  \App\Models\Project  $project
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, Issues $issues)
+    public function delete(User $user, Project $project)
     {
         //
     }
@@ -72,10 +72,10 @@ class IssuesPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Issues  $issues
+     * @param  \App\Models\Project  $project
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, Issues $issues)
+    public function restore(User $user, Project $project)
     {
         //
     }
@@ -84,10 +84,10 @@ class IssuesPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Issues  $issues
+     * @param  \App\Models\Project  $project
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, Issues $issues)
+    public function forceDelete(User $user, Project $project)
     {
         //
     }

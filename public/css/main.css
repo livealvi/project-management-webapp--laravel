@@ -38,3 +38,65 @@ a {
     color: white;
     background-color: #dc3545;
 }
+
+/* search */
+.search-box {
+    width: 400px;
+}
+.search {
+    position: relative;
+    box-shadow: 0 0 40px rgba(51, 51, 51, 0.1);
+}
+
+.search input {
+    height: 60px;
+    text-indent: 25px;
+    border: 2px solid #d6d4d4;
+}
+
+.search input:focus {
+    box-shadow: none;
+    border: 2px solid blue;
+}
+
+.search .fa-search {
+    position: absolute;
+    top: 20px;
+    left: 16px;
+}
+
+.search button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 50px;
+    width: 110px;
+    background: blue;
+}
+
+.filter-box {
+    width: 400px;
+}
+
+/* dashboard - cards */
+.card {
+    background-color: #f4f5f7;
+}
+
+.card-title {
+    font-size: 15px;
+}
+
+.inside-card {
+    margin: 10px 0;
+    border-radius: 3px;
+    background-color: white;
+}
+
+.create-issue {
+    width: 100%;
+}
+
+.create-issue:hover {
+    background-color: #d8d8d8;
+}
