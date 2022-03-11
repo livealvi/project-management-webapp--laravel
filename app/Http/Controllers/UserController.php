@@ -83,4 +83,10 @@ class UserController extends Controller
     {
         //
     }
+
+    public function user()
+    {
+        $users = User::all();
+        return view('pages.user.user')->with('users', $users);
+    }
 }

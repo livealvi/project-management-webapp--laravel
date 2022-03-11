@@ -6,10 +6,10 @@ use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
-    //home
+    //dashboard
     public function index()
     {
-        return view('home');
+        return view('pages.dashboard.dashboard');
     }
 
     //login
