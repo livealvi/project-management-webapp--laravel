@@ -2,7 +2,7 @@
 @section('content')
 <div class="mb-4">
     <div class="mt-4">
-        <h2>Users</h2>
+        <h2>User > List</h2>
     </div>
 
     <div class="d-flex justify-content-center mt-5">
@@ -18,7 +18,7 @@
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
-                <tbody class="align-middle">
+                <tbody class="align-middle text-lowercase">
                     @foreach($users as $count=>$user )
                     <tr>
                         <th scope="row">{{++$count}}</th>
@@ -27,6 +27,9 @@
                         <td>{{$user->user_name}}</td>
                         <td>{{$user->email}}</td>
                         <td>
+                            <a href="/user-edit/{{$user->id}}">
+                                <button type="button" class="btn btn-primary mb-2 mb-sm-0">Profile</button>
+                            </a>
                             <a href="/user-edit/{{$user->id}}">
                                 <button type="button" class="btn btn-success mb-2 mb-sm-0">Edit</button>
                             </a>
