@@ -119,6 +119,7 @@
         </div>
     </div>
 </div>
+
 <!-- Done Modal -->
 <div class="modal fade" id="doneModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -168,13 +169,6 @@
                 <button class="btn btn-primary">Search</button>
             </div>
         </div>
-        <div class="search-box">
-            <div class="search">
-                <i class="fa fa-search"></i>
-                <input type="text" class="form-control" placeholder="search firist issue">
-                <button class="btn btn-primary">Search</button>
-            </div>
-        </div>
     </div>
     {{-- card --}}
     <div class="mt-5">
@@ -191,11 +185,13 @@
                         </h5>
                         {{-- fectch-data --}}
                         @foreach($taskTodo as $taskTodo )
-                        <div class="inside-card">
-                            <div class="card-body">
-                                <h5 class="card-title">{{$taskTodo->task_title}}</h5>
+                        <a href="/todo-edit/{{$taskTodo->id}}">
+                            <div class="inside-card">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{$taskTodo->task_title}}</h5>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                         @endforeach
                         {{-- fectch-data --}}
                     </div>
@@ -221,11 +217,13 @@
                         </h5>
                         {{-- fectch-data --}}
                         @foreach($taskInProgress as $inProgress )
-                        <div class="inside-card">
-                            <div class="card-body">
-                                <h5 class="card-title">{{$inProgress->task_title}}</h5>
+                        <a href="/in-progress-edit/{{$inProgress->id}}">
+                            <div class="inside-card">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{$inProgress->task_title}}</h5>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                         @endforeach
                         {{-- fectch-data --}}
                     </div>
@@ -251,11 +249,13 @@
                         </h5>
                         {{-- fectch-data --}}
                         @foreach($taskIssue as $issue )
-                        <div class="inside-card">
-                            <div class="card-body">
-                                <h5 class="card-title">{{$issue->task_title}}</h5>
+                        <a href="/issue-edit/{{$issue->id}}">
+                            <div class="inside-card">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{$issue->task_title}}</h5>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                         @endforeach
                         {{-- fectch-data --}}
                     </div>
@@ -281,11 +281,13 @@
                         </h5>
                         {{-- fectch-data --}}
                         @foreach($taskDone as $done )
-                        <div class="inside-card">
-                            <div class="card-body">
-                                <h5 class="card-title">{{$done->task_title}}</h5>
+                        <a href="/done-edit/{{$done->id}}">
+                            <div class="inside-card">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{$done->task_title}}</h5>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                         @endforeach
                         {{-- fectch-data --}}
                     </div>

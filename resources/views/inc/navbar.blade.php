@@ -10,26 +10,30 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{{route('dashboard')}}">Home</a>
                 </li>
-                <li class="nav-item">
-                    {{-- <a class="nav-link" href="{{route('service')}}">Service</a> --}}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Users
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="{{route('user/list')}}">User List</a></li>
+                        <li><a class="dropdown-item" href="{{route('user/add')}}">Add User</a></li>
+                    </ul>
                 </li>
                 <li class="nav-item">
-                    {{-- <a class="nav-link" href="{{route('users')}}">Users</a> --}}
+
                 </li>
                 <li class="nav-item">
-                    {{-- <a class="nav-link" href="{{route('teachers')}}">Teachers</a> --}}
+
                 </li>
                 <li class="nav-item">
-                    {{-- <a class="nav-link" href="{{route('product')}}">Product</a> --}}
+
                 </li>
                 <li class="nav-item">
-                    {{-- <a class="nav-link" href="{{route('teams')}}">Our Teams</a> --}}
+
                 </li>
                 <li class="nav-item">
-                    {{-- <a class="nav-link" href="{{route('about')}}">About Us</a> --}}
-                </li>
-                <li class="nav-item">
-                    {{-- <a class="nav-link" href="{{route('contact')}}">Contact Us</a> --}}
+
                 </li>
             </ul>
             <div class="nav navbar-nav">
@@ -43,7 +47,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
 
                             {!!
-                            session('user.1') == "Admin" ? '<li><a class="dropdown-item logout text-center"
+                            session('user.1') == "admin" ? '<li><a class="dropdown-item logout text-center"
                                     href="dashboard">Dashboard</a></li>
                             <li>
                                 <hr class="dropdown-divider">
