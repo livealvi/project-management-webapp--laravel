@@ -4,7 +4,7 @@
     <div class="login">
         <h4 class="mb-5">Login</h4>
         <div class="login__form">
-            <form action="{{route('loginValidator')}}" method="post" class="needs-validation">
+            <form action="{{route('loginValidator')}}" method="post" class="needs-validation form-element__login">
                 {{csrf_field()}}
 
                 {{-- for error --}}
@@ -28,6 +28,7 @@
                     @enderror
                 </div>
                 {{-- password --}}
+
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Password</label>
                     <input type="password" class="form-control" id="password" name="password" placeholder="*******">
