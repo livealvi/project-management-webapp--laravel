@@ -28,8 +28,8 @@
                             <select class="form-select" name="role" aria-label="Default select example">
                                 <option selected>Not Selected</option>
                                 <option value="admin">Admin</option>
-                                <option value="tester">Manager</option>
-                                <option value="developer">Tester</option>
+                                <option value="manager">Manager</option>
+                                <option value="tester">Tester</option>
                                 <option value="developer">Developer</option>
                             </select>
                             {{-- show error message --}}

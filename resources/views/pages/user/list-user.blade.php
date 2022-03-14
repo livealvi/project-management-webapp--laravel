@@ -22,7 +22,7 @@
                     @foreach($users as $count=>$user )
                     <tr>
                         <th scope="row">{{++$count}}</th>
-                        <td>{{$user->user_id}}</td>
+                        <td>{{$user->id}}</td>
                         <td>{{$user->role}}</td>
                         <td>{{$user->user_name}}</td>
                         <td>{{$user->email}}</td>

@@ -20,9 +20,15 @@ use App\Http\Controllers\UserController;
 //navbar
 Route::get('/dashboard', [NavbarController::class, 'home'])->name('dashboard');
 
+//root
+Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
+
 //login
 Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/login', [LoginController::class, 'loginValidator'])->name('loginValidator');
+//logout
+//logout
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 //dashboard
 Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
