@@ -43,9 +43,9 @@ Route::post('/add/done', [DashboardController::class, 'insertDoneDash'])->name('
 
 //user
 //get
-Route::get('/user/list', [UserController::class, 'index'])->name('user/list');
+Route::get('/user-list', [UserController::class, 'index'])->name('user/list')->middleware('Dashboard');
 //user-add
-Route::get('/user/add', [UserController::class, 'addUser'])->name('user/add');
-Route::post('user/insert', [UserController::class, 'insertUser'])->name('user/insert');
+Route::get('/user-add', [UserController::class, 'addUser'])->name('user/add')->middleware('Dashboard');
+Route::post('/user/insert', [UserController::class, 'insertUser'])->name('user/insert')->middleware('Dashboard');
 //user-edit
-Route::get('/user/edit', [UserController::class, 'edit'])->name('/user/edit');
+Route::get('/user/edit', [UserController::class, 'edit'])->name('/user/edit')->middleware('Dashboard');

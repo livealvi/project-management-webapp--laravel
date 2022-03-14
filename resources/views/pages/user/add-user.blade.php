@@ -8,7 +8,7 @@
     <div class="d-flex justify-content-center mt-5">
         <div class="user_edit">
             <div class="user_edit__form">
-                <form action="{{route('user/insert')}}" method="post" class="needs-validation">
+                <form action="{{route('user/insert')}}" method="post" class="needs-validation form-element">
                     {{csrf_field()}}
 
                     {{-- for error --}}

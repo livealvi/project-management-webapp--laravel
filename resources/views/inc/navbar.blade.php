@@ -7,35 +7,35 @@
         </button>
         <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
             <ul class="navbar-nav">
+                @if(session('user'))
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{{route('dashboard')}}">Home</a>
                 </li>
+                @endif
+
+                {{-- for admin --}}
+                @if(session('user'))
+                {!!
+                session('user.1') == "admin" ? '
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarScrollingDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        Users
+                        User Controll
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="{{route('user/list')}}">User List</a></li>
-                        <li><a class="dropdown-item" href="{{route('user/add')}}">Add User</a></li>
+                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+
+                        <li><a class="dropdown-item" href="user-list">User List</a></li>
+                        <hr class="dropdown-divider">
+                        <li><a class="dropdown-item" href="user-add">Add User</a></li>
+                        ' : ''
+                        !!}
                     </ul>
                 </li>
-                <li class="nav-item">
-
-                </li>
-                <li class="nav-item">
-
-                </li>
-                <li class="nav-item">
-
-                </li>
-                <li class="nav-item">
-
-                </li>
-                <li class="nav-item">
-
-                </li>
+                @else
+                @endif
             </ul>
+            {{-- for admin --}}
+            {{-- login-logout --}}
             <div class="nav navbar-nav">
                 <div class="btn-nav">
                     @if(session('user'))
@@ -53,8 +53,6 @@
                                 <hr class="dropdown-divider">
                             </li>' : ''
                             !!}
-
-
                             <li><a class="dropdown-item logout text-center" href="{{route('logout')}}">Logout</a></li>
                         </ul>
                     </li>
@@ -63,6 +61,7 @@
                     @endif
                 </div>
             </div>
+            {{-- login-logout --}}
         </div>
     </div>
 </nav>

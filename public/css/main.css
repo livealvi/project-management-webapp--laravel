@@ -121,7 +121,12 @@ a:hover {
     /* width: 300px; */
 }
 
-.needs-validation {
+.form-element__login {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-element {
     display: flex;
     flex-wrap: wrap;
 }

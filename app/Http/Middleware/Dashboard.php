@@ -16,6 +16,10 @@ class Dashboard
      */
     public function handle(Request $request, Closure $next)
     {
-        return $next($request);
+        if ($request->session()->get('user.1') == 'admin') {
+            return $next($request);
+        } else {
+            return redirect()->route('dashboard');
+        }
     }
 }
