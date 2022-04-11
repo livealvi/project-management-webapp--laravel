@@ -9,4 +9,10 @@ class User extends Model
 {
     use HasFactory;
     public $timestamps = false;
+    protected $table = "users";
+
+    public function taskUserMappings()
+    {
+        return $this->hasMany(Tasks_User::class, 'user_id');
+    }
 }

@@ -65,5 +65,6 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         //custom made middleware
         'Dashboard' => \App\Http\Middleware\Dashboard::class,
+        'Redirect' => \App\Http\Middleware\Redirect::class,
     ];
 }

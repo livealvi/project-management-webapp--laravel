@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreTaskRequest;
 use App\Http\Requests\UpdateTaskRequest;
 use App\Models\Task;
+use GuzzleHttp\Psr7\Request;
 
 class TaskController extends Controller
 {
@@ -82,5 +83,9 @@ class TaskController extends Controller
     public function destroy(Task $task)
     {
         //
+    }
+
+    public function getTasks(Request $request)
+    {
     }
 }

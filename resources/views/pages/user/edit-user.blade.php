@@ -8,8 +8,9 @@
     <div class="d-flex justify-content-center mt-5">
         <div class="user_edit">
             <div class="user_edit__form">
-                <form action="{{route('user/insert')}}" method="post" class="needs-validation">
+                <form action="{{route('user/insert')}}" method="post" class="needs-validation form-element">
                     {{csrf_field()}}
+
                     {{-- for error --}}
                     @if ($errors->any())
                     <div class="alert alert-danger">
@@ -21,14 +22,24 @@
                     </div>
                     @endif
                     <div class="user_edit__form__box">
+                        {{-- name --}}
+                        <div class="mb-3">
+                            <label for="user_name" class="form-label">ID</label>
+                            <input type="name" class="form-control" id="id" disabled name="id" placeholder="Your id"
+                                value="{{$user->id}}">
+                            {{-- show error message --}}
+                            @error('id')
+                            <span class="text-danger">{{$message}}</span>
+                            @enderror
+                        </div>
                         {{-- role --}}
                         <div class="mb-3">
                             <label for="role" class="form-label">Role</label>
                             <select class="form-select" name="role" aria-label="Default select example">
                                 <option selected>Not Selected</option>
                                 <option value="admin">Admin</option>
-                                <option value="tester">Manager</option>
-                                <option value="developer">Tester</option>
+                                <option value="manager">Manager</option>
+                                <option value="tester">Tester</option>
                                 <option value="developer">Developer</option>
                             </select>
                             {{-- show error message --}}
@@ -41,7 +52,7 @@
                         <div class="mb-3">
                             <label for="user_name" class="form-label">Name</label>
                             <input type="name" class="form-control" id="user_name" name="user_name"
-                                placeholder="Your name" value="">
+                                placeholder="Your name" value="{{$user->user_name}}">
                             {{-- show error message --}}
                             @error('name')
                             <span class="text-danger">{{$message}}</span>
@@ -51,7 +62,7 @@
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
                             <input type="text" class="form-control" id="email" name="email" placeholder="your@email.com"
-                                value="">
+                                value="{{$user->email}}">
                             {{-- show error message --}}
                             @error('email')
                             <span class="text-danger">{{$message}}</span>
@@ -60,7 +71,8 @@
                         {{-- DOB --}}
                         <div class="mb-3">
                             <label for="password" class="form-label">Password</label>
-                            <input type="text" class="form-control" id="password" name="password" value="">
+                            <input type="text" class="form-control" id="password" name="password"
+                                value="{{$user->password}}">
                             {{-- show error message --}}
                             @error('passowrd')
                             <span class="text-danger">{{$message}}</span>
@@ -70,7 +82,7 @@
                         <div class="mb-3">
                             <label for="address" class="form-label">Address</label>
                             <input type="text" class="form-control" id="address" name="address"
-                                placeholder="Your Address" value="">
+                                placeholder="Your Address" value="{{$user->address}}">
                             {{-- show error message --}}
                             @error('address')
                             <span class="text-danger">{{$message}}</span>
@@ -79,7 +91,7 @@
                         {{-- phoen --}}
                         <div class="mb-3">
                             <label for="phone" class="form-label">Phone</label>
-                            <input type="text" class="form-control" id="phone" name="phone" value="">
+                            <input type="text" class="form-control" id="phone" name="phone" value="{{$user->phone}}">
                             {{-- show error message --}}
                             @error('phone')
                             <span class="text-danger">{{$message}}</span>
@@ -87,10 +99,11 @@
                         </div>
                     </div>
                     <div class="user_edit__form__box">
-                        {{-- joiningDate --}}
+                        {{-- joining_date --}}
                         <div class="mb-3">
                             <label for="joiningDate" class="form-label">Joining Date</label>
-                            <input type="date" class="form-control" id="joiningDate" name="joiningDate" value="">
+                            <input type="date" class="form-control" id="joiningDate" name="joiningDate"
+                                value="{{$user->joiningDate}}">
                             {{-- show error message --}}
                             @error('joiningDate')
                             <span class="text-danger">{{$message}}</span>
@@ -122,11 +135,11 @@
                         {{-- team --}}
                         <div class="mb-3">
                             <label for="team" class="form-label">Assign Team</label>
-                            <select class="form-select" name="team" aria-label="Default select example">
+                            <select class="form-select" name="team_id" aria-label="Default select example">
                                 <option selected>Not Selected</option>
-                                <option value="manager">Manager</option>
-                                <option value="tester">Tester</option>
-                                <option value="developer">Developer</option>
+                                <option value="1">Manager</option>
+                                <option value="2">Tester</option>
+                                <option value="3">Developer</option>
                             </select>
                             {{-- show error message --}}
                             @error('team')
@@ -136,13 +149,12 @@
                     </div>
                     {{-- submit --}}
                     <div class="user_edit__form__box_button">
-                        <button type="submit" class="btn btn-primary">Regester</button>
+                        <button type="submit" class="btn btn-primary">Update</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-
 </div>
 
 @endsection

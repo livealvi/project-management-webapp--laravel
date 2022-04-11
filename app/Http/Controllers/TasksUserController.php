@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Http\Requests\StoreTasks_UserRequest;
 use App\Http\Requests\UpdateTasks_UserRequest;
 use App\Models\Tasks_User;
+use App\Models\Task;
+use App\Models\User;
 
 class TasksUserController extends Controller
 {
@@ -82,5 +85,15 @@ class TasksUserController extends Controller
     public function destroy(Tasks_User $tasks_User)
     {
         //
+    }
+
+    public function getTasksByUser($id)
+    {
+        $task = Task::where('id', $id)->first();
+        $mappings = $task->taskUserMappings;
+
+        $task = Task::where('id', $mappings[0]['task_id'])->first();
+        $user = User::where('id', $mappings[0]['user_id'])->first();
+        return view('pages.task-by-user.task-by-user')->with('allData', $mappings)->with('task', $task)->with('user', $user);
     }
 }

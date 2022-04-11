@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\NavbarController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\TasksUserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -45,7 +46,16 @@ Route::post('/add/done', [DashboardController::class, 'insertDoneDash'])->name('
 //get
 Route::get('/user-list', [UserController::class, 'index'])->name('user/list')->middleware('Dashboard');
 //user-add
-Route::get('/user-add', [UserController::class, 'addUser'])->name('user/add')->middleware('Dashboard');
+Route::get('/user-add', [UserController::class, 'addUsers'])->name('user/add')->middleware('Dashboard');
 Route::post('/user/insert', [UserController::class, 'insertUser'])->name('user/insert')->middleware('Dashboard');
 //user-edit
-Route::get('/user/edit', [UserController::class, 'edit'])->name('/user/edit')->middleware('Dashboard');
+Route::get('/user-edit/{id}', [UserController::class, 'userEdit'])->name('user/edit')->middleware('Dashboard');
+Route::post('/user-update', [UserController::class, 'userUpdate'])->name('user/update');
+
+//task-assign-by-user
+//get
+Route::get('/todo-edit/{id}', [TasksUserController::class, 'getTasksByUser'])->name('todo-edit');
+
+//task
+//get
+// Route::post('/task', [UserController::class, 'userUpdate'])->name('user/update');
